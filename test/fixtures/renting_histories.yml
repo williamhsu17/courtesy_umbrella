@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_location_id: 1
+  start_time: 2016-12-13 17:15:38
+  end_location_id: 1
+  end_time: 2016-12-13 17:15:38
+
+two:
+  start_location_id: 1
+  start_time: 2016-12-13 17:15:38
+  end_location_id: 1
+  end_time: 2016-12-13 17:15:38

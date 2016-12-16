@@ -1,0 +1,13 @@
+<h1>customer umbrella operation</h1>
+<h4>scan an umbrella here</h4>
+
+<h4>current umbrella</h4>
+<% if @umbrella.nil? %>
+  <%= form_tag borrow_umbrellas_path, :method => :post do %>
+    <%= number_field_tag :id %>
+    <%= submit_tag "借雨傘" %>
+  <% end %>
+<% else %>
+  <p>目前借出的雨傘id：<%= @umbrella.id %></p>
+<% end %>
+

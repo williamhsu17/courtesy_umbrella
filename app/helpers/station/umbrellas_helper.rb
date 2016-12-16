@@ -1,0 +1,2 @@
+module Station::UmbrellasHelper
+end
