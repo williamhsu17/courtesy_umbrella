@@ -1,6 +1,8 @@
 class Admin::UmbrellasController < ApplicationController
   def index
     @locations = Location.all
+    @umbrellas = Umbrella.all
+
     @umbrella_in_renting = Umbrella.where(:umbrella_holder_type => :User)
 
     umbrella_rent_log = UmbrellaRentHistory.all
