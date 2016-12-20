@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213094322) do
+ActiveRecord::Schema.define(version: 20161219111202) do
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "name"
@@ -31,15 +31,18 @@ ActiveRecord::Schema.define(version: 20161213094322) do
     t.index ["station"], name: "index_locations_on_station"
   end
 
-  create_table "renting_histories", force: :cascade do |t|
+  create_table "umbrella_rent_histories", force: :cascade do |t|
+    t.integer  "umbrella_id"
+    t.integer  "user_id"
     t.integer  "start_location_id"
     t.datetime "start_time"
     t.integer  "end_location_id"
     t.datetime "end_time"
+    t.integer  "amount"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "umbrella_id"
-    t.index ["umbrella_id"], name: "index_renting_histories_on_umbrella_id"
+    t.index ["umbrella_id"], name: "index_umbrella_rent_histories_on_umbrella_id"
+    t.index ["user_id"], name: "index_umbrella_rent_histories_on_user_id"
   end
 
   create_table "umbrellas", force: :cascade do |t|
@@ -65,6 +68,10 @@ ActiveRecord::Schema.define(version: 20161213094322) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "authentication_token"
+    t.string   "provider"
+    t.string   "uid"
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
