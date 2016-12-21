@@ -36,8 +36,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'omniauth-facebook'
 
-gem 'capistrano-rails'
-gem 'capistrano-passenger'
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
 
 
 group :development, :test do
