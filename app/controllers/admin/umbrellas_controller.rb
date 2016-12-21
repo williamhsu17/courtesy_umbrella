@@ -3,7 +3,8 @@ class Admin::UmbrellasController < ApplicationController
     @locations = Location.all
     @umbrellas = Umbrella.all
 
-    @umbrella_in_renting = Umbrella.where(:umbrella_holder_type => :User)
+    @umbrellas_in_renting = Umbrella.where(:umbrella_holder_type => :User)
+    @umbrellas_in_station = Umbrella.where(:umbrella_holder_type => :Station)
 
     umbrella_rent_log = UmbrellaRentHistory.all
 
