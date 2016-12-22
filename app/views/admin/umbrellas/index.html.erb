@@ -1,87 +1,96 @@
-<nav> 
+<nav>
   <ul>
-    <li>umbrella_icon</li>
-    <li><%= link_to "管理" %></li>
-    <li><%= link_to "分析" %></li>
+    <li><p>icon</p></li>
+    <li><p><%= link_to "管理" %></p></li>
+    <li><p><%= link_to "分析" %></p></li>
+    <li class="right">
+      <p>
+        <%= link_to "#" do %> 
+        <span class="glyphicon btn-glyphicon glyphicon-user img-circle text-muted"></span>
+        <% end %>
+      </p>
+    </li>
     <li class="right"><%= link_to "登出" %></li>
-    <li class="right"><%= link_to "user_icon" %></li>
   </ul> 
-</nav> 
+</nav>
 
 <div class="clearfix"></div>
 
-<div class="col-lg-1">
-  <li> <%= link_to "map-icon 各站資訊", admin_locations_path %>  </li>
-  <li> <%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %> </li>
-  <li> <%= link_to "users-icon 使用者列表", admin_users_path %></li> 
-</div>
 
 
-<div class="station col-lg-11">
-  <div class="line-switch">
-    <li> <%= button_to "全線" %> </li> 
-    <li> <%= button_to "文湖線" %> </li> 
-    <li> <%= button_to "淡水信義線" %> </li> 
-    <li> <%= button_to "松山新店線" %> </li> 
-    <li> <%= button_to "中和新蘆線" %> </li> 
-    <li> <%= button_to "板南線" %> </li> 
-    <li> <%= button_to "借出中" %> </li> 
+<div class="row">
+  <div class="col-lg-1 sidebar">
+    <li> <p><%= link_to "map-icon 各站資訊", admin_locations_path %></p>  </li>
+    <li> <p><%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %></p> </li>
+    <li> <p><%= link_to "users-icon 使用者列表", admin_users_path %></p> </li> 
   </div>
-  <div>
-    <li class="right">
-      <div class="circle">
-        <p>
-          <%= link_to "#" do %> 
-          <span class="glyphicon btn-glyphicon glyphicon-pencil img-circle text-muted"></span>
-          <% end %>
-        </p>
-      </div>
-    </li>
-    <li class="right">
-      <div class="circle">
-        <p>
-          <%= link_to "#" do %> 
-          <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-muted"></span>
-          <% end %>
-        </p>
-      </div>
-    </li>
-    
-  </div>
+  <div class="station col-lg-11">
+    <div class="line-switch">
+      <li> <p><%= link_to "全線" %></p> </li> 
+      <li> <p><%= link_to "文湖線" %></p> </li> 
+      <li> <p><%= link_to "淡水信義線" %></p> </li> 
+      <li> <p><%= link_to "松山新店線" %></p> </li> 
+      <li> <p><%= link_to "中和新蘆線" %></p> </li> 
+      <li> <p><%= link_to "板南線" %></p> </li> 
+      <li> <p><%= link_to "借出中" %></p> </li> 
+    </div>
+    <div class="data-editor col-lg-12">
+      <li class="right">
+        <div class="circle">
+          <p>
+            <%= link_to "#" do %> 
+            <span class="glyphicon btn-glyphicon glyphicon-pencil img-circle text-muted"></span>
+            <% end %>
+          </p>
+        </div>
+      </li>
+      <li class="right">
+        <div class="circle">
+          <p>
+            <%= link_to "#" do %> 
+            <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-muted"></span>
+            <% end %>
+          </p>
+        </div>
+      </li>
+      
+    </div>
 
-  <table id=umbrellas class="table border-collapse col-lg-10">
-    <thead>
-      <tr>
-        <th width="10%">雨傘編號</th>
-        <th width="10%">目前所在位置</th>
-        <th width="10%">購買日期</th>
-        <th width="10%">系統登錄日期</th>
-        <th width="10%">已成功租借次數</th>
-        <th width="10%">已維修次數</th>
-        <th width="10%">傘況</th>
-        <th width="10%">最近一次出時間</th>
-        <th width="10%">使用者ID</th>
-        <th width="10%">備註</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @umbrellas.each do |umbrella|%>
-      <tr>
-        <td><%= umbrella.id %></td>
-        <td><%= umbrella.umbrella_holder.name %></td>
-        <td></td>
-        <td><%= umbrella.created_at %></td>
-        <td></td>
-        <td>need a column!</td>
-        <td>need a column!</td>
-        <td></td>
-        <td><%= umbrella.umbrella_holder_id%></td>
-        <td>need a column!</td>
-      </tr>
+    <table id=umbrellas class="table table-bordered col-lg-10">
+      <thead>
+        <tr>
+          <th width="10%">雨傘編號</th>
+          <th width="10%">目前所在位置</th>
+          <th width="10%">購買日期</th>
+          <th width="10%">系統登錄日期</th>
+          <th width="10%">已成功租借次數</th>
+          <th width="10%">已維修次數</th>
+          <th width="10%">傘況</th>
+          <th width="10%">最近一次出時間</th>
+          <th width="10%">使用者ID</th>
+          <th width="10%" class="remark">備註</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @umbrellas.each do |umbrella|%>
+        <tr>
+          <td><%= umbrella.id %></td>
+          <td><%= umbrella.umbrella_holder.name %></td>
+          <td></td>
+          <td><%= umbrella.created_at %></td>
+          <td></td>
+          <td>need a column!</td>
+          <td>need a column!</td>
+          <td></td>
+          <td><%= umbrella.umbrella_holder_id%></td>
+          <td>need a column!</td>
+        </tr>
     </tbody>
     <% end %>
   </table>
 </div>
+</div>
+
 
 ==== paginate ====
 
