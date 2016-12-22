@@ -1,0 +1,38 @@
+
+<nav> 
+  <ul>
+    <li>umbrella_icon</li>
+    <li><%= link_to "管理" %></li>
+    <li><%= link_to "分析" %></li>
+    <li class="right"><%= link_to "登出" %></li>
+    <li class="right"><%= link_to "user_icon" %></li>
+  </ul> 
+</nav> 
+
+<div class="clearfix"></div>
+
+<div class="col-lg-1">
+  <li> <%= link_to "map-icon 各站資訊", admin_locations_path %>  </li>
+  <li> <%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %> </li>
+  <li> <%= link_to "users-icon 使用者列表", admin_users_path %></li> 
+</div>
+<div class="col-lg-11">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>user</th>
+        <th>取用時間</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.umbrella_holder.email %></td>
+          <td><%= user.umbrella_holder.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

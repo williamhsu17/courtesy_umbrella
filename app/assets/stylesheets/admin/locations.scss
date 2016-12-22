@@ -1,0 +1,21 @@
+// Place all the styles related to the admin::locations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.location_container{
+  border: 1px solid black;
+  margin: 10px;
+  height: 150px;
+  padding: 0px;
+
+  .location_info{
+    margin: 20px 10px 0 10px;
+
+    p {
+      margin: 0;
+    }
+
+
+  }
+
+
+}

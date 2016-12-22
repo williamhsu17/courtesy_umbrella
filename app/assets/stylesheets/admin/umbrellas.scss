@@ -1,3 +1,86 @@
 // Place all the styles related to the admin::umbrellas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// admin umbrellas
+// li {
+//     list-style: none;
+//     float: left;
+//   }
+// li.right{
+//     float: right;
+//   }
+
+nav{
+  display: inline-block;
+  // border: 1px solid black;
+  ul{
+    li {
+      list-style: none;
+      float: left;
+      // display: inline-block;
+    }
+    li.right {
+      float: right;
+    }
+ 
+  }
+
+}
+
+
+div{
+  li {
+    list-style: none;
+    float: left;
+    display: inline-block;
+  }
+  li.right {
+    float: right;
+  }
+}
+
+.clearfix{
+  clear: both;
+}
+
+
+.col-lg-11{
+  .line-switch{
+    li{
+      margin: 20px 10px;
+      display: inline-block;
+    }
+
+  }
+}
+
+.station{
+  .circle{
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+
+    p{
+      font-size: 10px;
+      text-align: center;
+      line-height: 20px;
+      margin: 0;
+    } 
+  }
+}
+
+table#umbrellas{
+  margin-left: 10px; 
+  border-collapse: collapse;
+  border: 1px solid black;
+  th,td{
+    border: 1px solid black;
+  }
+
+}
+
+
+  

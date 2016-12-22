@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :umbrellas
+    resources :locations
+    resources :users
   end
 
   scope :path => '/api/v1/', :module => "api_v1", :as => 'v1', :defaults => { :format => :json } do

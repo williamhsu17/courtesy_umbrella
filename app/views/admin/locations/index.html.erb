@@ -1,0 +1,39 @@
+<nav> 
+  <ul>
+    <li>umbrella_icon</li>
+    <li><%= link_to "管理" %></li>
+    <li><%= link_to "分析" %></li>
+    <li><%= link_to "登出" %></li>
+    <li><%= link_to "user_icon" %></li>
+  </ul> 
+</nav> 
+<div class="clearfix"></div>
+<div class="col-lg-1">
+  <li> <%= link_to "map-icon 各站資訊", admin_locations_path %>  </li>
+  <li> <%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %> </li>
+  <li> <%= link_to "users-icon 使用者列表", admin_users_path %></li> 
+</div>
+
+<div class="col-lg-11">
+  <div class="line-switch col-lg-11">
+    <li> <%= button_to "全線" %> </li> 
+    <li> <%= button_to "文湖線" %> </li> 
+    <li> <%= button_to "淡水信義線" %> </li> 
+    <li> <%= button_to "松山新店線" %> </li> 
+    <li> <%= button_to "中和新蘆線" %> </li> 
+    <li> <%= button_to "板南線" %> </li>
+  </div>
+  <% @locations.each do |location| %>
+  <div class="location_container col-lg-2">
+    <div class="location_info ">
+      <p class="location_id"> <%= location.id %>  </p>
+      <p class="location_name"> <%= location.name %>  </p>
+      <p class="location_description"> <%= location.description %>  </p>
+      <br>
+      <p class="location_umbrella_number"> "可租雨傘數"<%= location.umbrellas.size %>  </p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+===== paginate =====
