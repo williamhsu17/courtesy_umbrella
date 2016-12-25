@@ -1,8 +1,8 @@
-<nav>
+<nav class="admin_umbrellas">
   <ul>
-    <li><p>icon</p></li>
-    <li><p><%= link_to "管理" %></p></li>
-    <li><p><%= link_to "分析" %></p></li>
+    <li>icon</li>
+    <li><%= link_to "管理" %></li>
+    <li><%= link_to "分析" %></li>
     <li class="right">
       <p>
         <%= link_to "#" do %> 
@@ -14,29 +14,54 @@
   </ul> 
 </nav>
 
-<div class="clearfix"></div>
-
-
-
 <div class="row">
-  <div class="col-lg-1 sidebar">
-    <li> <p><%= link_to "map-icon 各站資訊", admin_locations_path %></p>  </li>
-    <li> <p><%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %></p> </li>
-    <li> <p><%= link_to "users-icon 使用者列表", admin_users_path %></p> </li> 
-  </div>
-  <div class="station col-lg-11">
-    <div class="line-switch">
-      <li> <p><%= link_to "全線" %></p> </li> 
-      <li> <p><%= link_to "文湖線" %></p> </li> 
-      <li> <p><%= link_to "淡水信義線" %></p> </li> 
-      <li> <p><%= link_to "松山新店線" %></p> </li> 
-      <li> <p><%= link_to "中和新蘆線" %></p> </li> 
-      <li> <p><%= link_to "板南線" %></p> </li> 
-      <li> <p><%= link_to "借出中" %></p> </li> 
+  <div class= "col-md-1">
+    <div class="sidebar">
+      <li>
+        <%= link_to admin_locations_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-map-marker"></span></td>
+              <td width=80% class="button_text">各站<br>資訊</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_umbrellas_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-list-alt"></span></td>
+              <td width=80% class="button_text">雨傘<br>清單</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-search"></span></td>
+              <td width=80% class="button_text">使用者<br>列表</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
     </div>
-    <div class="data-editor col-lg-12">
+  </div>
+  <div class="station col-md-11">
+    <div class="line-switch">
+      <li> <%= link_to "全線" %> </li> 
+      <li> <%= link_to "文湖線" %></p> </li> 
+      <li> <%= link_to "淡水信義線" %> </li> 
+      <li> <%= link_to "松山新店線" %> </li> 
+      <li> <%= link_to "中和新蘆線" %> </li> 
+      <li> <%= link_to "板南線" %> </li> 
+      <li> <%= link_to "借出中" %> </li> 
+    </div>
+    <div class="data-editor col-md-12">
       <li class="right">
-        <div class="circle">
+        <div>
           <p>
             <%= link_to "#" do %> 
             <span class="glyphicon btn-glyphicon glyphicon-pencil img-circle text-muted"></span>
@@ -56,13 +81,13 @@
       
     </div>
 
-    <table id=umbrellas class="table table-bordered col-lg-10">
+    <table id=umbrellas class=" table table-bordered col-md-11">
       <thead>
         <tr>
-          <th width="10%">雨傘編號</th>
+          <th width="5%">雨傘編號</th>
           <th width="10%">目前所在位置</th>
           <th width="10%">購買日期</th>
-          <th width="10%">系統登錄日期</th>
+          <th width="15%">系統登錄日期</th>
           <th width="10%">已成功租借次數</th>
           <th width="10%">已維修次數</th>
           <th width="10%">傘況</th>
@@ -83,12 +108,12 @@
           <td>need a column!</td>
           <td></td>
           <td><%= umbrella.umbrella_holder_id%></td>
-          <td>need a column!</td>
+          <td class="remark">need a column!</td>
         </tr>
-    </tbody>
-    <% end %>
-  </table>
-</div>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
 </div>
 
 

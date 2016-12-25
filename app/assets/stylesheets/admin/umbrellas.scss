@@ -3,41 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// admin umbrellas
-// li {
-//     list-style: none;
-//     float: left;
-//   }
-// li.right{
-//     float: right;
-//   }
-// 待解決: umbrella icon / hyperlink style / nav無法靠左 / sidebar bgc / 
-a{
-  text-decoration: none;
-}
+
+// 待解決: umbrella icon /  sidebar bgc / nav跟下面的空隙
+
 nav{
   display: inline-block;
   width: 100%;
   height: 60px;
-  background-color: #A1A1A1;
-  // border: 1px solid black;
+  background-color: #D8D8D8;
+  p{
+    margin: 0;
+  }
   ul{
     padding-left: 0;
+    display: inline-block;
+    margin-bottom: 0;
+    width: 100%;
+
     li {
       list-style: none;
       float: left;
       line-height: 60px;
-      
       width: 60px;
       text-align: center;
-      
       text-decoration: none;
+      font-size: 24px;
+      color: #9B9B9B;
+        
+        a{
+          margin-bottom: 0;
+          color: #9B9B9B;
+          text-decoration: none;
+        }
+
+        a:hover{
+          text-decoration: none;
+        }
       
-      p {
-        font-size: 24px;
-        margin-bottom: 0;
-        color: rgba(0,0,0,0.50);
-      }
 
     }
     li.right {
@@ -69,33 +71,71 @@ div{
 }
 
 .row{
-  .sidebar{
+  margin: 0;
+  .col-md-1{
+    padding: 0 5px 0 0;
+    .sidebar{
     background-color: #EFEFEF;
     font-size: 18px;
-    color: #4A4A4A;
-  }
+    color: #EDECED;
+    right: 15px;
+    display: inline-block;
+    padding: 0;
+      li{
+        // margin-left: 25px;
+        text-align: center;
+        padding: 25px auto;
+        a{
+          text-decoration: none;
+          color: #4A4A4A;
+          padding: 0;
+          td.button_icon{
+            font-size: 34px;
+            // height: 75px;
+            padding: 15px 5px 15px 12px;
+            span{
+              padding: 10px 0;
+            }
 
-  .col-lg-11{
-    
-    padding-right: 40px;
+          }
+          td.button_text{
+            font-size: 18px;    
+            padding: 0 auto;      
+          }
+
+        }
+        a.hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+
+  .col-md-11{
+    padding: 0 20px 0 10px;
     
     .line-switch{
 
       display: inline-block;
       
       li{
-        margin: 20px 10px 0 10px;
+        margin: 20px 20px 0 0;
         display: inline-block;
-        background: #EFEFEF;
+        background-color: rgba(74,74,74,0.5);
         border-radius: 10px;
         width: 100px;
         height: 40px;
         text-align: center;
+        font-size: 18px;
 
-        p{
+        a{
+          line-height: 40px;
           font-size: 18px;
           color: #FFFFFF;
-          line-height: 40px;
+        }
+        a:hover{
+          text-decoration: none;
         }
       }
 
@@ -104,31 +144,32 @@ div{
     .data-editor{
       display: inline-block;
       padding: 0; 
+      li{
+        margin-left: 10px;
+      }
     
     }
     table#umbrellas{
-      margin: 10px 0 0 10px; 
-      // border-collapse: collapse;
+      margin: 0; 
       border: 1px solid black;
-      // th,td{
-      //   border: 1px solid #000000;
-      // }
+      
       th{
         font-size: 14px;
         line-height: 30px;
         padding: 0;
         text-align: center
       }
-      th.remark{
+      th.remark, td.remark{
         text-align: left;
         padding-left: 8px;
       }
-      p{
+      td{
         font-size: 14px;
-        line-height: 20px;
-        padding: 0;
+        padding: 0 8px;
+        text-align: center;
+        line-height: 28px;
       }
-
+      
     }
   }
 }

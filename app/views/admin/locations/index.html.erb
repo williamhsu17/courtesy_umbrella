@@ -1,39 +1,95 @@
-<nav> 
+<nav class="admin_umbrellas">
   <ul>
-    <li>umbrella_icon</li>
+    <li>icon</li>
     <li><%= link_to "管理" %></li>
     <li><%= link_to "分析" %></li>
-    <li><%= link_to "登出" %></li>
-    <li><%= link_to "user_icon" %></li>
+    <li class="right">
+      <p>
+        <%= link_to "#" do %> 
+        <span class="glyphicon btn-glyphicon glyphicon-user img-circle text-muted"></span>
+        <% end %>
+      </p>
+    </li>
+    <li class="right"><%= link_to "登出" %></li>
   </ul> 
-</nav> 
-<div class="clearfix"></div>
-<div class="col-lg-1">
-  <li> <%= link_to "map-icon 各站資訊", admin_locations_path %>  </li>
-  <li> <%= link_to "sheet-icon 雨傘清單", admin_umbrellas_path %> </li>
-  <li> <%= link_to "users-icon 使用者列表", admin_users_path %></li> 
-</div>
-
-<div class="col-lg-11">
-  <div class="line-switch col-lg-11">
-    <li> <%= button_to "全線" %> </li> 
-    <li> <%= button_to "文湖線" %> </li> 
-    <li> <%= button_to "淡水信義線" %> </li> 
-    <li> <%= button_to "松山新店線" %> </li> 
-    <li> <%= button_to "中和新蘆線" %> </li> 
-    <li> <%= button_to "板南線" %> </li>
-  </div>
-  <% @locations.each do |location| %>
-  <div class="location_container col-lg-2">
-    <div class="location_info ">
-      <p class="location_id"> <%= location.id %>  </p>
-      <p class="location_name"> <%= location.name %>  </p>
-      <p class="location_description"> <%= location.description %>  </p>
-      <br>
-      <p class="location_umbrella_number"> "可租雨傘數"<%= location.umbrellas.size %>  </p>
+</nav>
+<div class="row">
+  <div class= "col-md-1">
+    <div class="sidebar">
+      <li>
+        <%= link_to admin_locations_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-map-marker"></span></td>
+              <td width=80% class="button_text">各站<br>資訊</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_umbrellas_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-list-alt"></span></td>
+              <td width=80% class="button_text">雨傘<br>清單</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %> 
+          <table>
+            <tr>
+              <td width=20% class="button_icon"><span class="glyphicon glyphicon-search"></span></td>
+              <td width=80% class="button_text">使用者<br>列表</td>
+            </tr>
+          </table>
+        <% end %>
+      </li>
     </div>
   </div>
-  <% end %>
+  <div class="station col-md-11">
+    <div class="line-switch">
+      <li> <%= link_to "全線" %> </li> 
+      <li> <%= link_to "文湖線" %></p> </li> 
+      <li> <%= link_to "淡水信義線" %> </li> 
+      <li> <%= link_to "松山新店線" %> </li> 
+      <li> <%= link_to "中和新蘆線" %> </li> 
+      <li> <%= link_to "板南線" %> </li> 
+      <li> <%= link_to "借出中" %> </li> 
+    </div>
+    <div class="data-editor col-md-12">
+      <li class="right">
+        <div>
+          <p>
+            <%= link_to "#" do %> 
+            <span class="glyphicon btn-glyphicon glyphicon-pencil img-circle text-muted"></span>
+            <% end %>
+          </p>
+        </div>
+      </li>
+      <li class="right">
+        <div class="circle">
+          <p>
+            <%= link_to "#" do %> 
+            <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-muted"></span>
+            <% end %>
+          </p>
+        </div>
+      </li>
+    </div>
+    <% @locations.each do |location| %>
+    <div class="location_container col-lg-2">
+      <div class="location_info ">
+        <p class="location_id"> <%= location.id %>  </p>
+        <p class="location_name"> <%= location.name %>  </p>
+        <p class="location_description"> <%= location.description %>  </p>
+        <br>
+        <p class="location_umbrella_number"> "可租雨傘數"<%= location.umbrellas.size %>  </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 
 ===== paginate =====
